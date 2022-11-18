@@ -1,0 +1,4 @@
+for i in footer highlightcard nextsteps resources terminal toolbar
+do
+(cd ngx-planet-demo-$i; npm start)&
+done

@@ -25,23 +25,25 @@ export class AppComponent implements OnInit {
             }
         });
 
-        this.planet.registerApps([
-            {
-                name: 'highlightcard',
-                hostParent: '#mfe-highlightcard-container',
-                hostClass: 'mfe-highlightcard',
-                routerPathPrefix: '/',
-                resourcePathPrefix: '/mfe/highlightcard/',
-                preload: true,
-                scripts: [
-                    'main.js'
-                ],
-                styles: [
-                    'styles.css'
-                ]
-            }
-        ]);
-
+        let mfes = ['highlightcard', 'footer', 'nextsteps', 'resources', 'terminal', 'toolbar' ];
+        for (var mfe of mfes) {
+          this.planet.registerApps([
+              {
+                  name: `${mfe}`,
+                  hostParent: `#mfe-${mfe}-container`,
+                  hostClass: `mfe-${mfe}`,
+                  routerPathPrefix: '/',
+                  resourcePathPrefix: `/mfe/${mfe}/`,
+                  preload: true,
+                  scripts: [
+                      'main.js'
+                  ],
+                  styles: [
+                      'styles.css'
+                  ]
+              }
+          ]);
+        }
         // start monitor route changes
         // get apps to active by current path
         // load static resources which contains javascript and css
