@@ -1,0 +1,2 @@
+sed -i -e "s/highlightcard/links/g" $(git ls-files)
+sed -i -e "s/Highlightcard/Links/g" $(git ls-files)

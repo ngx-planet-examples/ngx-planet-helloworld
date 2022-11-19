@@ -1,7 +1,7 @@
 const PROXY_CONFIG = {};
 
 
-let mfes = ['highlightcard', 'footer', 'nextsteps', 'resources', 'terminal', 'toolbar' ];
+let mfes = ['highlightcard', 'footer', 'nextsteps', 'resources', 'terminal', 'toolbar', 'links' ];
 let start_port = 4201;
 
 const rewriteFn = function (path, req) {
