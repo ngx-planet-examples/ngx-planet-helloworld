@@ -25,7 +25,7 @@ export class AppComponent implements OnInit {
             }
         });
 
-        let mfes = ['highlightcard', 'footer', 'nextsteps', 'resources', 'terminal', 'toolbar', 'links' ];
+        let mfes = [ 'toolbar', 'highlightcard', 'resources', 'nextsteps', 'links', 'footer' ];
         for (var mfe of mfes) {
           this.planet.registerApps([
               {

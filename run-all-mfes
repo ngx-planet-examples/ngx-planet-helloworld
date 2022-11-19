@@ -1,4 +1,9 @@
-for i in footer highlightcard nextsteps resources terminal toolbar links
+tmux split-window
+#for i in footer links
+for i in toolbar highlightcard resources nextsteps links footer
 do
-(cd ngx-planet-demo-$i; npm start)&
+  tmux split-window -h "(cd ngx-planet-demo-$i; npm start; sleep infinity)"
 done
+tmux select-layout main-horizontal
+tmux select-pane -t 0
+(cd ngx-planet-demo-portal; npm start)

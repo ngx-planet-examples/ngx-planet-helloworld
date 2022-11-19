@@ -3,14 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ngx-planet-demo-nextsteps": {
+    "ngx-planet-demo-original": {
       "projectType": "application",
       "schematics": {
-        "@schematics/angular:component": {
-          "style": "scss",
+        "@schematics/angular:class": {
           "skipTests": true
         },
-        "@schematics/angular:class": {
+        "@schematics/angular:component": {
           "skipTests": true
         },
         "@schematics/angular:directive": {
@@ -34,30 +33,22 @@
       },
       "root": "",
       "sourceRoot": "src",
-      "prefix": "nextsteps",
+      "prefix": "original",
       "architect": {
         "build": {
-          "builder": "@angular-builders/custom-webpack:browser",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "customWebpackConfig": {
-              "path": "./extra-webpack.config.js",
-              "mergeStrategies": {
-                "module.rules": "append"
-              },
-              "replaceDuplicatePlugins": true
-            },
-            "outputPath": "dist/ngx-planet-demo-nextsteps",
+            "outputPath": "dist/ngx-planet-demo-original",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           },
@@ -81,13 +72,12 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "vendorChunk": false,
               "outputHashing": "all"
             },
             "development": {
               "buildOptimizer": false,
               "optimization": false,
-              "vendorChunk": false,
+              "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
               "namedChunks": true
@@ -96,17 +86,13 @@
           "defaultConfiguration": "production"
         },
         "serve": {
-          "builder": "@angular-builders/custom-webpack:dev-server",
-          "options": {
-            "port": 4204,
-	    "publicHost": "http://localhost:4204"
-          },
+          "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "ngx-planet-demo-nextsteps:build:production"
+              "browserTarget": "ngx-planet-demo-original:build:production"
             },
             "development": {
-              "browserTarget": "ngx-planet-demo-nextsteps:build:development"
+              "browserTarget": "ngx-planet-demo-original:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -114,7 +100,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ngx-planet-demo-nextsteps:build"
+            "browserTarget": "ngx-planet-demo-original:build"
           }
         },
         "test": {
@@ -124,21 +110,17 @@
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.spec.json",
             "karmaConfig": "karma.conf.js",
-            "inlineStyleLanguage": "scss",
             "assets": [
               "src/favicon.ico",
               "src/assets"
             ],
             "styles": [
-              "src/styles.scss"
+              "src/styles.css"
             ],
             "scripts": []
           }
         }
       }
     }
-  },
-  "cli": {
-    "analytics": false
   }
 }

@@ -98,8 +98,8 @@
         "serve": {
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
-            "port": 4204,
-	    "publicHost": "http://localhost:4204"
+            "port": 4203,
+	    "publicHost": "http://localhost:4203"
           },
           "configurations": {
             "production": {
@@ -137,5 +137,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

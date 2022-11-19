@@ -99,8 +99,8 @@
           "builder": "@angular-builders/custom-webpack:dev-server",
           "options": {
             "proxyConfig": "proxy.conf.js",
-	    "publicHost": "http://localhost:4200",
-            "port": 4200
+	    "publicHost": "http://localhost:4299",
+            "port": 4299
           },
           "configurations": {
             "production": {
@@ -138,5 +138,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }
