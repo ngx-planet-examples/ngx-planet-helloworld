@@ -300,10 +300,14 @@
       visibility: hidden;
     }
   }
+
+  .border {
+    border: 2px solid firebrick;
+  }
 </style>
 
 <!-- Toolbar -->
-<div class="toolbar" role="banner">
+<div class="toolbar" [ngClass]="{ 'border': border }" role="banner">
   <img
     width="40"
     alt="Angular Logo"

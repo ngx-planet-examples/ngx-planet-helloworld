@@ -300,9 +300,13 @@
       visibility: hidden;
     }
   }
+
+  .border {
+    border: 2px solid maroon;
+  }
 </style>
 
-<div class="content" role="main">
+<div class="content" [ngClass]="{ 'border': border }" role="main">
 
   <!-- Footer -->
   <footer>
