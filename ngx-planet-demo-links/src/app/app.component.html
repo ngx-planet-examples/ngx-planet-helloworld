@@ -300,9 +300,13 @@
       visibility: hidden;
     }
   }
+
+  .border {
+    border: 2px solid midnightblue;
+  }
 </style>
 
-<div class="content" role="main">
+<div class="content" [ngClass]="{ 'border': border }" role="main">
 
   <!-- Links -->
   <div class="card-container">
