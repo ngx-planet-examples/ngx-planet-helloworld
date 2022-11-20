@@ -1,4 +1,4 @@
-for i in portal footer highlightcard nextsteps resources terminal toolbar links
+for i in portal footer highlightcard nextsteps resources toolbar links
 do
   (cd ngx-planet-demo-$i; npm install)
 done
